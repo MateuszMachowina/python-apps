@@ -4,7 +4,7 @@ from tabulate import tabulate
 from dotenv import load_dotenv
 
 load_dotenv()  # Loads variables from .env into the environment
-# Hybrid API key approach: environment variable or prompt
+# API key environment variable or prompt
 API_KEY = os.getenv("API_KEY")
 if not API_KEY:
     print("⚠️  No API key found in environment.")
@@ -148,7 +148,7 @@ def display_top_tanks(username, top_n=5):
     print(f"Win Rate: {win_rate:.2f}%")
     print(f"Global Rating: {global_rating}\n")
 
-    # 👇 Ask user for tier filter
+    # Ask user for tier filter
     tier_input = input("Enter tier(s) to filter (e.g. 8 or 6,7,8 or 'all'): ").strip()
     if tier_input.lower() != "all":
         try:
