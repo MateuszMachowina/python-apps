@@ -44,7 +44,7 @@ This repository will continue to grow with different mini-projects I build as I 
     pip install -r requirements.txt
     ```
 
-3. Create a `.env` file in the project root and add your API key, for example [World of Tanks API key](https://developers.wargaming.net/) like this:
+3. Create a `.env` file in the project root and add your API key, for example [World of Tanks API key](https://developers.wargaming.net/):
 
     ```env
     API_KEY=your_api_key_here
