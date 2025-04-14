@@ -29,29 +29,34 @@ This repository will continue to grow with different mini-projects I build as I 
 - `os` (for environment variable access)  
 - `python-dotenv` (for loading `.env` files)
 
-## Installation
+## Installation & Running the Script
 
-1. Clone the repository:
+1. **Download the necessary files**:
+   - The `.py` script you want to run
+   - `requirements.txt` (if available)
 
-    ```bash
-    git clone https://github.com/MateuszMachowina/python-apps.git
-    cd python-apps
-    ```
+2. **Create a `.env` file** in the same folder as the script and add your API key:
 
-2. Install the required packages:
+   ```env
+   API_KEY=your_api_key_here
+   ```
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+3. **Open Command Prompt**
 
-3. Create a `.env` file in the project root and add your API key, for example [World of Tanks API key](https://developers.wargaming.net/):
+4. **Navigate to the script folder**:
 
-    ```env
-    API_KEY=your_api_key_here
-    ```
+   ```bash
+   cd "C:\Path\To\Your\Script"
+   ```
 
-4. Run the desired application:
+5. **Install required libraries**:
 
-    ```bash
-    python app_name.py
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+6. **Run the script**:
+
+   ```bash
+   python script_name.py
+   ```
