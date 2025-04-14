@@ -1,4 +1,4 @@
-## 🚀 World of Tanks Stats Viewer
+## 🎮 World of Tanks Stats Viewer
 
 A simple and interactive Python app to explore player stats from **World of Tanks** using the official Wargaming API.
 
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ### 🛠️ Setup Instructions
 
 1. **Download the following files**:
-   - The script file (`wot_stats_viewer.py`)
+   - The script file (`World of Tanks Stats Viewer.py`)
    - `requirements.txt`
 
 2. **Create a `.env` file** in the same folder and add your API key:
@@ -80,8 +80,4 @@ The app will prompt for a username, number of top tanks, and display the stats i
 
 - No API key in `.env`? The app will ask for one on launch.
 - Designed for EU region (`api.worldoftanks.eu`); you can adjust for other regions if needed.
-- Easily extendable for additional player or tank data!
-
----
-
-🎮 Happy tanking!
+- Easily extendable for additional player or tank data! 
