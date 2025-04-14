@@ -22,12 +22,6 @@ tabulate
 python-dotenv
 ```
 
-Or install them with:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## 🛠️ Setup Instructions
 
 1. **Download the following files**:
