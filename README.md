@@ -41,19 +41,23 @@ This repository will continue to grow with different mini-projects I build as I 
 
 3. **Open Command Prompt**
 
-4. **Navigate to the script folder**:
+4. **Navigate to the script folder**:  
+   *(If your script is on another drive, switch first by typing the drive letter)*
 
    ```bash
-   cd "C:\Path\To\Your\Script"
+   E:
+   cd "Path\To\Your\Script"
    ```
 
 5. **Install required libraries**:
-
+   
+   *(if `requirements.txt` is available)*
+   
    ```bash
    pip install -r requirements.txt
    ```
 
-6. **Run the script**:
+7. **Run the script**:
 
    ```bash
    python script_name.py
