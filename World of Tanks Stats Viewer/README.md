@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ## 🛠️ Setup Instructions
 
 1. **Download the following files**:
-   - The script file (`World of Tanks Stats Viewer.py`)
+   - The script file (`wot_stats_viewer.py`)
    - `requirements.txt`
 
 2. **Create a `.env` file** in the same folder and add your API key:
@@ -44,19 +44,21 @@ pip install -r requirements.txt
 
 3. **Open Command Prompt / Terminal**
 
-4. **Navigate to the script folder**:
-
+4. **Navigate to the script folder**:  
+   *(If your script is on another drive, switch first by typing the drive letter)*
+   
    ```bash
+   E:
    cd "C:\Path\To\Your\Script"
    ```
 
-5. **Install dependencies**:
+6. **Install required libraries**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-6. **Run the app**:
+7. **Run the app**:
 
    ```bash
    python wot_stats_viewer.py
