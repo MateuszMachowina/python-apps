@@ -2,8 +2,6 @@
 
 A simple and interactive Python app to explore player stats from **World of Tanks** using the official Wargaming API.
 
----
-
 ### 🎯 Features
 
 - 🔍 Search for World of Tanks players by username  
@@ -13,8 +11,6 @@ A simple and interactive Python app to explore player stats from **World of Tank
 - 🏅 Display **mastery badges**, **average damage**, **frags**, and **max frags**  
 - 🔄 Easily switch between players or sessions  
 - 🔐 API key management via `.env` file or manual input
-
----
 
 ### 🧪 Requirements
 
@@ -31,8 +27,6 @@ Or install them with:
 ```bash
 pip install -r requirements.txt
 ```
-
----
 
 ### 🛠️ Setup Instructions
 
