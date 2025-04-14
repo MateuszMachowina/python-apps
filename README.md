@@ -1,27 +1,25 @@
-# Simple Python Apps Collection
+# 🐍 Simple Python Apps Collection
 
 Welcome to my Python Apps Collection! Here I share various simple Python applications I've been working on. Each app serves as a fun way for me to learn and experiment with Python.
 
-## Apps
+## 🧩 Apps
 
-### 1. **World of Tanks Stats Viewer**
+### 1. **World of Tanks Stats Viewer** 🎮
 
-A simple app that allows users to search for their World of Tanks player statistics and view detailed information about their most-used tanks.
+A lightweight CLI app to fetch and display World of Tanks player stats using the official API.
 
-**Features:**
-- Search World of Tanks players by username  
-- View total battles, win rate, and global rating  
-- Display top-used tanks with detailed stats  
-- Filter tanks by tier  
-- Show mastery badges, average damage, frags, and more  
-- Switch easily between players or sessions  
-- API key handling via `.env` file or manual input  
+**Highlights:**
+- 🔍 Search players by username  
+- 📊 View battles, win rate, and global rating  
+- 🛡️ See top-used tanks with detailed stats  
+- 🎯 Filter tanks by tier  
+- 🔐 Supports API key via `.env` or manual input
 
-### 2. **Other Apps**
+### 2. **Other Apps** 🛠️
 
 This repository will continue to grow with different mini-projects I build as I learn more Python. Stay tuned for more!
 
-## Technologies Used
+## ⚙️ Technologies Used
 
 - Python 3.13  
 - `requests` (for API calls)  
@@ -29,7 +27,7 @@ This repository will continue to grow with different mini-projects I build as I 
 - `os` (for environment variable access)  
 - `python-dotenv` (for loading `.env` files)
 
-## Installation & Running the Script
+## 🚀 Installation & Running the Script
 
 1. **Download the necessary files**:
    - The `.py` script you want to run
