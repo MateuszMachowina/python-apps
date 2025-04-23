@@ -148,7 +148,7 @@ def display_top_tanks(username, top_n=5):
     print(f"Win Rate: {win_rate:.2f}%")
     print(f"Global Rating: {global_rating}\n")
 
-    # 👇 Ask user for tier filter
+    # Ask user for tier filter
     tier_input = input("Enter tier(s) to filter (e.g. 8 or 6,7,8 or 'all'): ").strip()
     if tier_input.lower() != "all":
         try:
