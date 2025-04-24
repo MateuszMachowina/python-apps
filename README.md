@@ -1,4 +1,4 @@
-# 🐍 Simple Python Apps Collection
+# 🐍 Simple Python Apps
 
 Welcome to my Python Apps Collection! Here I share various simple Python applications I've been working on. Each app serves as a fun way for me to learn and experiment with Python.
 
