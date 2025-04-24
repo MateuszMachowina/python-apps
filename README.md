@@ -15,25 +15,48 @@ A lightweight CLI app to fetch and display World of Tanks player stats using the
 - 🎯 Filter tanks by tier  
 - 🔐 Supports API key via `.env` or manual input
 
-### 2. **Other Apps** 🛠️
+### 2. **FX Rates Checker** 💱
 
-This repository will continue to grow with different mini-projects I build as I learn more Python. Stay tuned for more!
+This mini-project includes two CLI scripts that fetch exchange rates from two different APIs: Fixer.io and ExchangeRate-API.
+
+**Scripts:**
+- `exchange-rates-fixer.py`: Fetches EUR-based rates via the **Fixer.io API**.  
+- `exchange-rates-er.py`: Supports multiple base currencies via the **ExchangeRate-API**.
+
+**Highlights:**
+- 🔑 Secure API key management via `.env`
+- 🔁 Continuous prompt for target currencies
+- 🌍 Real-time currency data
+
+### 3. **Currency Converter for Excel** 📊
+
+Converts invoice amounts in Excel files from EUR to a target currency using real-time exchange rates.
+
+**Highlights:**
+- 📁 Supports `.xlsx` and `.xlsm` (macros preserved)
+- 💱 Fetches live exchange rates from ExchangeRate-API
+- 📌 Updates values directly in the spreadsheet
+- 💾 Saves converted file with target currency in the name
+
+---
 
 ## ⚙️ Technologies Used
 
 - Python 3.13  
-- `requests` (for API calls)  
-- `tabulate` (for tabular output formatting)  
-- `os` (for environment variable access)  
-- `python-dotenv` (for loading `.env` files)
+- `requests` (API communication)  
+- `tabulate` (terminal table output)  
+- `os` & `dotenv` (environment variable handling)  
+- `openpyxl` (Excel file handling)  
+- `tkinter` (file dialog for Excel script)
 
 ## 🚀 Installation & Running the Script
 
 1. **Download the necessary files**:
    - The `.py` script you want to run
    - `requirements.txt` (if available)
+   - other files if necessary
 
-2. **Create a `.env` file** in the same folder as the script and add your API key:
+2. **Create a `.env` file** in the same folder as the script and add your API key (name can vary depending on the project):
 
    ```env
    API_KEY=your_api_key_here
