@@ -1,5 +1,5 @@
 
-# Currency Converter for Excel
+# 💱 Currency Converter for Excel
 
 This Python script helps convert invoice amounts in an Excel file from EUR to a target currency using real-time exchange rates fetched from [ExchangeRate-API](https://www.exchangerate-api.com/). It supports both `.xlsx` (standard Excel files) and `.xlsm` (macro-enabled Excel files), ensuring that the macros in `.xlsm` files are preserved.
 
