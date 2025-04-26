@@ -1,5 +1,5 @@
 
-# FX Rates Checker
+# 🌍 FX Rates Checker
 
 For now this repository contains two Python scripts to check exchange rates from different APIs. 
 
