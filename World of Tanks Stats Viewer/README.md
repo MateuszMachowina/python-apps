@@ -1,4 +1,4 @@
-## 🎮 World of Tanks Stats Viewer
+# 🎮 World of Tanks Stats Viewer
 
 A simple and interactive Python app to explore player stats from **World of Tanks** using the official Wargaming API.
 
