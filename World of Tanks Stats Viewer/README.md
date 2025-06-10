@@ -63,3 +63,7 @@ python-dotenv
 - No API key in `.env`? The app will ask for one on launch.
 - Designed for EU region (`api.worldoftanks.eu`); you can adjust for other regions if needed.
 - Easily extendable for additional player or tank data! 
+
+![World of Tanks Stats Viewer Screenshot](assets/screenshot.png)
+
+
