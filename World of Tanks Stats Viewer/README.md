@@ -66,4 +66,3 @@ python-dotenv
 
 ![World of Tanks Stats Viewer Screenshot](assets/screenshot.png)
 
-
