@@ -2,8 +2,9 @@
 
 This repository contains Python scripts and supporting files used to prepare and manage the data and images for the **FIFA 15 Pack Opener** web simulator. These tools handle CSV-to-JSON conversion, image verification, format conversion, and maintain the master player table.
 
----
+[Link to the main project ⚽](https://github.com/MateuszMachowina/PackOpenerF15)
 
+---
 ## 📂 Contents
 
 - `csv_to_json.py` – Converts raw CSV player data into a structured JSON format for use in the simulator.  
