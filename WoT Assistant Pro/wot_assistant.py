@@ -303,7 +303,7 @@ class WoTStatsApp(QMainWindow):
 
         # Data Table
         self.table = QTableWidget()
-        self.table.setColumnCount(15) # Dodane nowe kolumny
+        self.table.setColumnCount(15) 
         self.table.setHorizontalHeaderLabels(["ID", "Fav.", "MoE", "Ikona", "Czołg", "Tier", "Typ", "Nacja", "Bitwy", "Zwycięstwa", "WN8", "Śr. DMG", "Śr. Fragi", "Dobra zabawa", "Konkurencyjność"])
         self.table.hideColumn(0)
         self.table.setIconSize(QSize(100, 30))
@@ -347,7 +347,6 @@ class WoTStatsApp(QMainWindow):
         self.current_account_id = acc_id
         self.db.upsert_player(acc_id, search_res["data"][0]["nickname"])
 
-        # Wartości oczekiwane
         self.expected_vals = self.get_wn8_expected()
 
         # Pobieranie ogólnych info konta i czołgów
@@ -373,7 +372,7 @@ class WoTStatsApp(QMainWindow):
 
         self.db.upsert_player_tanks(acc_id, tanks)
         
-        # Odrzucanie elementów z błędem w WTR (jeśli istnieją)
+        # Odrzucanie elementów z błędem w WTR
         wtr_data = wtr_res.get("data", {}).get(str(acc_id), {})
         wtr_val = wtr_data.get("rating", 0) if wtr_data else 0
         
