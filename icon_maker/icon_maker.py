@@ -1,7 +1,7 @@
 from PIL import Image
 
 # 1. Wczytaj swój oryginalny plik PNG
-img = Image.open('ikonka.png') # <--- Zmień na nazwę swojego obrazka
+img = Image.open('ikonka.png')
 
 # 2. Pobierz jego wymiary i znajdź dłuższy bok
 szerokosc, wysokosc = img.size
