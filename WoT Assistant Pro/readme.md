@@ -58,6 +58,24 @@ python-dotenv
    ```bash
    python wot_assistant.py
    ```
+### 📦 Optional: Build your own `.exe` file
+
+If you want to run the app without the black console window or share it easily, you can compile it into a single standalone executable using PyInstaller.
+
+1. **Install PyInstaller**:
+   ```bash
+   py -m pip install pyinstaller
+   ```
+2. **Build the executable**:
+   ```bash
+   py -m PyInstaller --noconsole --onefile --icon=icon.ico wot_assistant.py
+   ```
+(Note: If you are not using a custom icon, simply remove `--icon=icon.ico` from the command).
+  
+3. **Once finished**, your ready-to-use `wot_assistant.exe` will be located in the newly created `dist` folder.
+
+⚠️ **Crucial:** Move the `.exe` file wherever you like, but always remember to keep your `.env` file in the exact same folder next to it!
+
 
 ## 💬 Notes
 
