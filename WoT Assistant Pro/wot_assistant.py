@@ -230,8 +230,8 @@ class WoTStatsApp(QMainWindow):
         # Top connection layout
         login_layout = QHBoxLayout()
         self.nick_input = QLineEdit()
-        #self.nick_input.setPlaceholderText("Wpisz nick gracza...")
-        self.nick_input.setText("koks516")
+        self.nick_input.setPlaceholderText("Wpisz nick gracza...")
+        #self.nick_input.setText("example_nick")
         self.login_btn = QPushButton("Synchronizuj")
         self.login_btn.setDefault(True)
         self.login_btn.clicked.connect(self.sync_player)
