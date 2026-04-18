@@ -230,7 +230,8 @@ class WoTStatsApp(QMainWindow):
         # Top connection layout
         login_layout = QHBoxLayout()
         self.nick_input = QLineEdit()
-        self.nick_input.setPlaceholderText("Wpisz nick gracza...")
+        #self.nick_input.setPlaceholderText("Wpisz nick gracza...")
+        self.nick_input.setText("koks516")
         self.login_btn = QPushButton("Synchronizuj")
         self.login_btn.setDefault(True)
         self.login_btn.clicked.connect(self.sync_player)
@@ -247,8 +248,8 @@ class WoTStatsApp(QMainWindow):
         self.stats_layout = QHBoxLayout(self.stats_group)
         
         self.lbl_wtr = QLabel("<b>WTR:</b> -")
-        self.lbl_wn8 = QLabel("<b>WN8:</b> -")
         self.lbl_battles = QLabel("<b>Bitwy:</b> -")
+        self.lbl_wn8 = QLabel("<b>WN8:</b> -")
         self.lbl_winrate = QLabel("<b>Zwycięstwa:</b> -")
         
         self.lbl_max_dmg_icon = QLabel()
@@ -258,8 +259,8 @@ class WoTStatsApp(QMainWindow):
         self.lbl_max_frags_text = QLabel("<b>Max Frags:</b> -")
         
         self.stats_layout.addWidget(self.lbl_wtr)
-        self.stats_layout.addWidget(self.lbl_wn8)
         self.stats_layout.addWidget(self.lbl_battles)
+        self.stats_layout.addWidget(self.lbl_wn8)
         self.stats_layout.addWidget(self.lbl_winrate)
         self.stats_layout.addStretch()
         self.stats_layout.addWidget(self.lbl_max_dmg_icon)
@@ -304,7 +305,7 @@ class WoTStatsApp(QMainWindow):
 
         # Data Table
         self.table = QTableWidget()
-        self.table.setColumnCount(15) 
+        self.table.setColumnCount(15) # Dodane nowe kolumny
         self.table.setHorizontalHeaderLabels(["ID", "Fav.", "MoE", "Ikona", "Czołg", "Tier", "Typ", "Nacja", "Bitwy", "Zwycięstwa", "WN8", "Śr. DMG", "Śr. Fragi", "Dobra zabawa", "Konkurencyjność"])
         self.table.hideColumn(0)
         self.table.setIconSize(QSize(100, 30))
@@ -348,6 +349,7 @@ class WoTStatsApp(QMainWindow):
         self.current_account_id = acc_id
         self.db.upsert_player(acc_id, search_res["data"][0]["nickname"])
 
+        # Wartości oczekiwane
         self.expected_vals = self.get_wn8_expected()
 
         # Pobieranie ogólnych info konta i czołgów
@@ -373,7 +375,7 @@ class WoTStatsApp(QMainWindow):
 
         self.db.upsert_player_tanks(acc_id, tanks)
         
-        # Odrzucanie elementów z błędem w WTR
+        # Odrzucanie elementów z błędem w WTR (jeśli istnieją)
         wtr_data = wtr_res.get("data", {}).get(str(acc_id), {})
         wtr_val = wtr_data.get("rating", 0) if wtr_data else 0
         
@@ -381,14 +383,18 @@ class WoTStatsApp(QMainWindow):
         wins = info_data.get("wins", 0)
         win_rate = (wins / battles * 100) if battles > 0 else 0
 
-        # WN8 Globalne wyliczenie z zebranych czołgów
+        # WN8 Globalne wyliczenie
         wn8_val = self.calculate_wn8(info_data, tanks, self.expected_vals)
         wn8_color = self.get_wn8_color(wn8_val)
         
+        # Obliczanie koloru dla Win Rate
+        wr_color = self.get_wn8_color(win_rate * 40)
+        
+        # Aktualizacja tekstów z nową kolejnością i kolorami
         self.lbl_wtr.setText(f"<b>WTR:</b> {wtr_val}")
-        self.lbl_wn8.setText(f"<b>WN8:</b> <span style='color:{wn8_color}'>{wn8_val}</span>")
         self.lbl_battles.setText(f"<b>Bitwy:</b> {battles}")
-        self.lbl_winrate.setText(f"<b>Zwycięstwa:</b> {win_rate:.2f}%")
+        self.lbl_wn8.setText(f"<b>WN8:</b> <span style='color:{wn8_color}'>{wn8_val}</span>")
+        self.lbl_winrate.setText(f"<b>Zwycięstwa:</b> <span style='color:{wr_color}'>{win_rate:.2f}%</span>")
         
         self.update_record_ui(self.lbl_max_dmg_icon, self.lbl_max_dmg_text, "Max DMG", info_data.get("max_damage", 0), info_data.get("max_damage_tank_id"))
         self.update_record_ui(self.lbl_max_frags_icon, self.lbl_max_frags_text, "Max Frags", info_data.get("max_frags", 0), info_data.get("max_frags_tank_id"))
