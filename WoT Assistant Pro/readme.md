@@ -61,8 +61,7 @@ python-dotenv
 
 ## 💬 Notes
 
-- The initial synchronization may take a bit longer than usual, as the app needs to download and cache all tank icons.
-- On the first run, the app will automatically create a local `wot_stats.db` database and an `icons_cache` folder to speed up future loads.
+- The initial synchronization may take a bit longer than usual. The app will automatically create a local `wot_stats.db` database and an `icons_cache` folder.
 - Designed for the EU region (`api.worldoftanks.eu`); you can adjust the `API_URL` variable in the script for other regions if needed.
 - **Privacy Tip:** Never upload your `.env` file or `wot_stats.db` to public repositories (add them to your `.gitignore`!).
 
