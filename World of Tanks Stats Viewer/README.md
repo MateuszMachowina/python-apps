@@ -2,6 +2,9 @@
 
 A simple and interactive Python app to explore player stats from **World of Tanks** using the official Wargaming API.
 
+**Make sure to check better version of this idea:**
+[World of Tanks Assistant Pro](https://github.com/MateuszMachowina/python-apps/tree/main/WoT%20Assistant%20Pro)
+
 ## 🎯 Features
 
 - 🔍 Search for World of Tanks players by username  
