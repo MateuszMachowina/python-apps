@@ -66,4 +66,4 @@ python-dotenv
 - Designed for the EU region (`api.worldoftanks.eu`); you can adjust the `API_URL` variable in the script for other regions if needed.
 - **Privacy Tip:** Never upload your `.env` file or `wot_stats.db` to public repositories (add them to your `.gitignore`!).
 
-![WoT Stats Assistant Screenshot](assets/screenshot.jpg)
+![WoT Stats Assistant Screenshot](screenshot.png)
