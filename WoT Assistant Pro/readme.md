@@ -26,7 +26,7 @@ python-dotenv
 ## 🛠️ Setup Instructions
 
 1. **Download the following files**:
-   - The script file (`wot_stats_assistant.py`)
+   - The script file (`wot_assistant.py`)
    - `requirements.txt`
 
 2. **Create a `.env` file** in the same folder and add your API key:
@@ -56,11 +56,12 @@ python-dotenv
 6. **Run the app**:
 
    ```bash
-   python wot_stats_assistant.py
+   python wot_assistant.py
    ```
 
 ## 💬 Notes
 
+- The initial synchronization may take a bit longer than usual, as the app needs to download and cache all tank icons.
 - On the first run, the app will automatically create a local `wot_stats.db` database and an `icons_cache` folder to speed up future loads.
 - Designed for the EU region (`api.worldoftanks.eu`); you can adjust the `API_URL` variable in the script for other regions if needed.
 - **Privacy Tip:** Never upload your `.env` file or `wot_stats.db` to public repositories (add them to your `.gitignore`!).
