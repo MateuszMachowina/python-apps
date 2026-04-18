@@ -220,6 +220,7 @@ class WoTStatsApp(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("WoT Stats Assistant")
+        self.setWindowIcon(QIcon("icon.ico"))
         self.resize(1350, 750)
         
         central = QWidget()
