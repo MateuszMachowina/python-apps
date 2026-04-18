@@ -1,4 +1,4 @@
-# 🎮 WoT Stats Assistant
+# 🎮 WoT Assistant Pro
 
 An advanced, interactive graphical Python application (GUI) to explore player stats, track tank performance, and calculate **WN8** in real-time using Wargaming and XVM APIs.
 
