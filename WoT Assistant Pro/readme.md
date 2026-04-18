@@ -74,7 +74,7 @@ If you want to run the app without the black console window or share it easily, 
   
 3. **Once finished**, your ready-to-use `wot_assistant.exe` will be located in the newly created `dist` folder.
 
-⚠️ **Crucial:** Move the `.exe` file wherever you like, but always remember to keep your `.env` file in the exact same folder next to it!
+(Note: Move the `.exe` file wherever you like, but always remember to keep your `.env` and `.db` file in the exact same folder next to it! Just make a shortcut to it and place it in your preferred place.)
 
 
 ## 💬 Notes
