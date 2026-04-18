@@ -83,4 +83,4 @@ If you want to run the app without the black console window or share it easily, 
 - Designed for the EU region (`api.worldoftanks.eu`); you can adjust the `API_URL` variable in the script for other regions if needed.
 - **Privacy Tip:** Never upload your `.env` file or `wot_stats.db` to public repositories (add them to your `.gitignore`!).
 
-![WoT Stats Assistant Screenshot](screenshot2.png)
+![WoT Stats Assistant Screenshot](screenshot.png)
