@@ -27,19 +27,15 @@ python main.py
 ```
 
 ## 🛠 Usage
-
-1. Load Data: Click "Wybierz plik źródłowy" and select your Excel file.
-
-2. Set Key: Click on a column header in the preview table to set it as the aggregation ID.
-
-3. Configure KPI:
-- Select columns to ignore in the "Wykluczenia" list.
-- Choose aggregation methods for numeric columns.
-
-4. Generate: Click "Generuj raport HTML". The report will open automatically in your browser.
+1. **Load Data:** Click "Wybierz plik źródłowy" and select your Excel file.
+2. **Set Key:** Click on a **column header** in the preview table to set it as the aggregation ID.
+3. **Configure KPI:**
+   - Select columns to ignore in the "Wykluczenia" list.
+   - Choose aggregation methods for numeric columns.
+4. **Generate:** Click "Generuj raport HTML". The report will open automatically in your browser.
 
 ## 📦 Tech Stack
-- GUI: Tkinter
-- Data Engine: Pandas
-- Charts: Plotly
-- Output: HTML5 / CSS3 (Inter font, responsive layout)
+- **GUI:** Tkinter
+- **Data Engine:** Pandas
+- **Charts:** Plotly
+- **Output:** HTML5 / CSS3 (Inter font, responsive layout)
