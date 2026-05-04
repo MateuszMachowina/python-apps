@@ -127,7 +127,7 @@ class ExcelReportApp:
         ttk.Label(agg_header_container, text="Metody agregacji wskaźników (KPI)", style="Header.TLabel").pack(side='left')
         
         # Panel zmiany zbiorczej
-        self.bulk_agg_combo = ttk.Combobox(agg_header_container, values=["Suma", "Średnia", "Maksimum", "Minimum"], state="readonly", width=12)
+        self.bulk_agg_combo = ttk.Combobox(agg_header_container, values=["Średnia", "Suma", "Maksimum", "Minimum"], state="readonly", width=12)
         self.bulk_agg_combo.current(0)
         self.bulk_agg_combo.pack(side='right', padx=5)
         
@@ -168,7 +168,7 @@ class ExcelReportApp:
             self.excel_file = pd.ExcelFile(self.file_path)
             sheet_names = self.excel_file.sheet_names
             
-            # Logika pokazywania/ukrywania listy arkuszy
+            # Przywrócona logika pokazywania/ukrywania listy arkuszy
             if len(sheet_names) > 1:
                 self.sheet_frame.pack(fill='x', pady=(0, 10), after=self.btn_load)
             else:
@@ -223,7 +223,7 @@ class ExcelReportApp:
         ttk.Separator(self.agg_frame, orient='horizontal').grid(row=1, column=0, columnspan=2, sticky='ew', padx=10, pady=5)
         for i, col in enumerate(numeric_cols):
             ttk.Label(self.agg_frame, text=col, style="Panel.TLabel").grid(row=i+2, column=0, sticky='w', padx=10, pady=4)
-            cb = ttk.Combobox(self.agg_frame, values=["Suma", "Średnia", "Maksimum", "Minimum"], state="readonly", width=20)
+            cb = ttk.Combobox(self.agg_frame, values=["Średnia", "Suma", "Maksimum", "Minimum"], state="readonly", width=20)
             cb.current(0)
             cb.grid(row=i+2, column=1, sticky='w', pady=4)
             self.agg_methods[col] = cb
