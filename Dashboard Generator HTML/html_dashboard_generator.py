@@ -166,10 +166,19 @@ class ExcelReportApp:
         if not self.file_path: return
         try:
             self.excel_file = pd.ExcelFile(self.file_path)
-            self.sheet_combo['values'] = self.excel_file.sheet_names
+            sheet_names = self.excel_file.sheet_names
+            
+            # Logika pokazywania/ukrywania listy arkuszy
+            if len(sheet_names) > 1:
+                self.sheet_frame.pack(fill='x', pady=(0, 10), after=self.btn_load)
+            else:
+                self.sheet_frame.pack_forget()
+                
+            self.sheet_combo['values'] = sheet_names
             self.sheet_combo.current(0)
             self.load_sheet_data()
-        except Exception as e: messagebox.showerror("Błąd odczytu", str(e))
+        except Exception as e: 
+            messagebox.showerror("Błąd odczytu", str(e))
 
     def load_sheet_data(self, event=None):
         try:
@@ -254,7 +263,7 @@ class ExcelReportApp:
             selected_method_name = self.agg_methods[first_kpi_col].get()
             pd_method = self.agg_dict_pandas[selected_method_name]
             
-            # Liczenie na surowych danych (df_filtered) zgodnie z wybraną metodą
+            # Liczenie na surowych danych zgodnie z wybraną metodą
             first_kpi_val = getattr(df_filtered[first_kpi_col], pd_method)()
             kpi_tile_title = f"{selected_method_name}: {first_kpi_col}"
 
