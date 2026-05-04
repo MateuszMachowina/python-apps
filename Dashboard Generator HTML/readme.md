@@ -6,7 +6,7 @@ A modern desktop application (GUI) for transforming raw Excel data into interact
 - **Data Import:** Supports `.xlsx` and `.xls` files with sheet selection.
 - **Data Aggregation:** Group records by a chosen ID and define aggregation methods (`Sum`, `Average`, `Min`, `Max`) per column.
 - **Smart Filtering:** Automatic detection of date columns and manual exclusion of unnecessary data.
-- **Custom Branding:** Integrated color picker to set the report's primary accent color (default #007ACC - professional blue).
+- **Custom Branding:** Integrated color picker to set the report's primary accent color (default `#007ACC` - professional blue).
 - **Interactive Visuals:** Responsive Plotly bar charts and summary scorecards.
 - **Dark Mode UI:** Professional, dark-themed interface built with customized Tkinter styles.
 
