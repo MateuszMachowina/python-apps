@@ -254,7 +254,7 @@ class ExcelReportApp:
             selected_method_name = self.agg_methods[first_kpi_col].get()
             pd_method = self.agg_dict_pandas[selected_method_name]
             
-            # POPRAWKA: Liczenie na surowych danych (df_filtered) zgodnie z wybraną metodą
+            # Liczenie na surowych danych (df_filtered) zgodnie z wybraną metodą
             first_kpi_val = getattr(df_filtered[first_kpi_col], pd_method)()
             kpi_tile_title = f"{selected_method_name}: {first_kpi_col}"
 
