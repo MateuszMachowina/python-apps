@@ -1,44 +1,28 @@
-# 🐍 Simple Python Apps
+# 🐍 Python Apps
 
 Welcome to my Python Apps Collection! Here I share various simple Python applications I've been working on. Each app serves as a fun way for me to learn and experiment with Python.
 
-## 🧩 Apps
+## 🧩 About the Projects
 
-### 1. **World of Tanks Stats Viewer** 🎮
+The apps in this collection vary in purpose and complexity, but they typically focus on:
 
-A lightweight CLI app to fetch and display World of Tanks player stats using the official API.
+- 🔍 Working with external APIs and real-time data
+- 📊 Data processing, analysis, and visualization
+- 💻 CLI tools and simple desktop applications
+- 📁 File handling (e.g., Excel automation)
+- 🎨 Building clean and functional user interfaces
 
-**Highlights:**
-- 🔍 Search players by username  
-- 📊 View battles, win rate, and global rating  
-- 🛡️ See top-used tanks with detailed stats  
-- 🎯 Filter tanks by tier  
-- 🔐 Supports API key via `.env` or manual input
+Each project is designed to explore a specific concept or technology, often in a practical, hands-on way.
 
-### 2. **FX Rates Checker** 💱
+## ⚙️ Common Features
 
-This mini-project includes two CLI scripts that fetch exchange rates from two different APIs: Fixer.io and ExchangeRate-API.
+Depending on the project, you may find:
 
-**Scripts:**
-- `exchange-rates-fixer.py`: Fetches EUR-based rates via the **Fixer.io API**.  
-- `exchange-rates-er.py`: Supports multiple base currencies via the **ExchangeRate-API**.
-
-**Highlights:**
-- 🔑 Secure API key management via `.env`
-- 🔁 Continuous prompt for target currencies
-- 🌍 Real-time currency data
-
-### 3. **Currency Converter for Excel** 📊
-
-Converts invoice amounts in Excel files from EUR to a target currency using real-time exchange rates.
-
-**Highlights:**
-- 📁 Supports `.xlsx` and `.xlsm` (macros preserved)
-- 💱 Fetches live exchange rates from ExchangeRate-API
-- 📌 Updates values directly in the spreadsheet
-- 💾 Saves converted file with target currency in the name
-
----
+- 🔑 Secure handling of API keys (e.g., via .env)
+- 🔁 Interactive command-line workflows
+- 📊 Data transformation and reporting
+- 🌍 Integration with third-party services
+- 🖥️ Simple GUI applications (e.g., Tkinter-based tools)
 
 ## ⚙️ Technologies Used
 
