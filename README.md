@@ -69,3 +69,19 @@ Depending on the project, you may find:
    ```bash
    python script_name.py
    ```
+
+## 📦 Optional: Build your own `.exe` file
+
+If you want to run the app without the black console window or share it easily, you can compile it into a single standalone executable using PyInstaller.
+
+1. **Install PyInstaller**:
+   ```bash
+   py -m pip install pyinstaller
+   ```
+2. **Build the executable**:
+   ```bash
+   py -m PyInstaller --noconsole --onefile --icon=icon.ico app_name.py
+   ```
+(Note: If you are not using a custom icon, simply remove `--icon=icon.ico` from the command).
+  
+3. **Once finished**, your ready-to-use `app_name.exe` will be located in the newly created `dist` folder.
