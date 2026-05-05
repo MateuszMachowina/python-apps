@@ -385,7 +385,8 @@ class ExcelReportApp:
             <script>window.addEventListener('load', function() {{ setTimeout(function() {{ window.dispatchEvent(new Event('resize')); }}, 150); }});</script>
             </body></html>"""
             
-            # Pobranie folderu, w którym znajduje się plik Excel
+            # Pobranie folderu, w którym znajduje się plik Excel. Opcjonalnie można zmienić na Desktop, gdy jest błąd Errno 9
+            #output_dir = os.path.join(os.path.expanduser("~"), "Desktop")
             output_dir = os.path.dirname(self.file_path)
             output_file_path = os.path.join(output_dir, "raport_analityczny.html")
             
