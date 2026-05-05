@@ -104,23 +104,7 @@ class ExcelReportApp:
         self.lbl_id = ttk.Label(self.root, text="Wybrany klucz: Brak", font=("Segoe UI", 10, "bold"), foreground="#ff6b6b")
         self.lbl_id.pack(anchor='w', pady=5)
 
-        # 3. Wykluczenia
-        ttk.Label(self.root, text="Wykluczenia z analizy", style="Header.TLabel").pack(anchor='w', pady=(15, 0))
-        self.ignore_frame = ttk.Frame(self.root)
-        self.ignore_frame.pack(fill='x')
-        self.ignore_listbox = tk.Listbox(
-            self.ignore_frame, selectmode=tk.MULTIPLE, height=3,
-            bg=self.panel_bg, fg=self.fg_color, selectbackground=self.btn_active, 
-            borderwidth=0, highlightthickness=1, highlightcolor=self.btn_bg, font=("Segoe UI", 9)
-        )
-        self.ignore_listbox.pack(side='left', fill='x', expand=True)
-        self.ignore_listbox.bind('<<ListboxSelect>>', self.update_agg_table)
-        
-        ignore_scroll = ttk.Scrollbar(self.ignore_frame, orient="vertical", command=self.ignore_listbox.yview)
-        ignore_scroll.pack(side='right', fill='y')
-        self.ignore_listbox.configure(yscrollcommand=ignore_scroll.set)
-
-        # 4. Metody Agregacji (z opcją masowej zmiany)
+        # 3. Metody Agregacji (PRZENIESIONE WYŻEJ)
         agg_header_container = ttk.Frame(self.root)
         agg_header_container.pack(fill='x', pady=(15, 0))
         
@@ -148,6 +132,23 @@ class ExcelReportApp:
         self.agg_canvas.configure(yscrollcommand=self.agg_scrollbar.set)
         self.agg_canvas.pack(side="left", fill="both", expand=True)
         self.agg_scrollbar.pack(side="right", fill="y")
+
+        # 4. Wykluczenia z analizy (PRZENIESIONE NIŻEJ)
+        ttk.Label(self.root, text="Wykluczenia z analizy", style="Header.TLabel").pack(anchor='w', pady=(15, 0))
+        self.ignore_frame = ttk.Frame(self.root)
+        self.ignore_frame.pack(fill='x')
+        self.ignore_listbox = tk.Listbox(
+            self.ignore_frame, selectmode=tk.MULTIPLE, height=3,
+            bg=self.panel_bg, fg=self.fg_color, selectbackground=self.btn_active, 
+            borderwidth=0, highlightthickness=1, highlightcolor=self.btn_bg, font=("Segoe UI", 9),
+            exportselection=False  # <--- POPRAWKA: Rozwiązuje problem podwójnego klikania w Comboboxach
+        )
+        self.ignore_listbox.pack(side='left', fill='x', expand=True)
+        self.ignore_listbox.bind('<<ListboxSelect>>', self.update_agg_table)
+        
+        ignore_scroll = ttk.Scrollbar(self.ignore_frame, orient="vertical", command=self.ignore_listbox.yview)
+        ignore_scroll.pack(side='right', fill='y')
+        self.ignore_listbox.configure(yscrollcommand=ignore_scroll.set)
 
         # 5. Konfiguracja wizualna i Eksport
         ttk.Label(self.root, text="Eksport", style="Header.TLabel").pack(anchor='w', pady=(15, 0))
@@ -210,21 +211,39 @@ class ExcelReportApp:
         self.update_agg_table()
 
     def update_agg_table(self, event=None):
+        # Zapisujemy obecny stan metod przed wyczyszczeniem
+        saved_methods = {}
+        for col, combo in self.agg_methods.items():
+            try:
+                saved_methods[col] = combo.get()
+            except tk.TclError:
+                pass # Ignorujemy, jeśli widget już nie istnieje
+                
         for widget in self.agg_frame.winfo_children(): widget.destroy()
         self.agg_methods.clear()
+        
         if self.df is None: return
         ignored = [self.ignore_listbox.get(i) for i in self.ignore_listbox.curselection()]
         numeric_cols = [c for c in self.df.select_dtypes(include='number').columns if c not in ignored and c != self.id_column]
+        
         if not numeric_cols:
             ttk.Label(self.agg_frame, text="Brak kolumn numerycznych do agregacji.", style="Panel.TLabel", font=("Segoe UI", 9, "italic")).grid(row=0, column=0, padx=10, pady=10)
             return
+            
         ttk.Label(self.agg_frame, text="Kolumna / Wskaźnik", style="Panel.TLabel", font=("Segoe UI", 9, "bold")).grid(row=0, column=0, sticky='w', padx=10, pady=5)
         ttk.Label(self.agg_frame, text="Metoda", style="Panel.TLabel", font=("Segoe UI", 9, "bold")).grid(row=0, column=1, sticky='w', pady=5)
         ttk.Separator(self.agg_frame, orient='horizontal').grid(row=1, column=0, columnspan=2, sticky='ew', padx=10, pady=5)
+        
         for i, col in enumerate(numeric_cols):
             ttk.Label(self.agg_frame, text=col, style="Panel.TLabel").grid(row=i+2, column=0, sticky='w', padx=10, pady=4)
             cb = ttk.Combobox(self.agg_frame, values=["Średnia", "Suma", "Maksimum", "Minimum"], state="readonly", width=20)
-            cb.current(0)
+            
+            # 2. DODANE: Odtwarzamy zapisany stan lub dajemy domyślny
+            if col in saved_methods:
+                cb.set(saved_methods[col])
+            else:
+                cb.current(0)
+                
             cb.grid(row=i+2, column=1, sticky='w', pady=4)
             self.agg_methods[col] = cb
 
