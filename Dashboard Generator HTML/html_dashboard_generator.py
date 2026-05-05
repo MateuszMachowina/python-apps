@@ -78,6 +78,11 @@ class ExcelReportApp:
         self.style.configure("Vertical.TScrollbar", background=self.btn_bg, borderwidth=0, arrowcolor=self.fg_color)
 
     def create_widgets(self):
+
+        # Stopka na samym dole aplikacji
+        lbl_footer = ttk.Label(self.root, text="Stworzone przez: Mateusz Machowina", font=("Segoe UI", 9), foreground="#777777")
+        lbl_footer.pack(side='bottom', pady=(15, 0))
+
         # 1. Źródło danych
         ttk.Label(self.root, text="Źródło danych", style="Header.TLabel").pack(anchor='w')
         self.btn_load = ttk.Button(self.root, text="Wybierz plik źródłowy (.xlsx)", command=self.load_excel)
@@ -316,13 +321,13 @@ class ExcelReportApp:
                 h1 {{ font-size: 2.2rem; font-weight: 800; color: #ffffff; text-shadow: 0 0 15px rgba(255,255,255,0.1); margin-bottom: 10px; }}
                 .timestamp {{ color: var(--text-muted); font-size: 0.95rem; font-weight: 400; }}
                 
-                /* SCORECARDY - Zwięzłe i dopasowane */
+                /* SCORECARDY */
                 .scorecards-container {{ display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }}
                 .scorecard {{ background-color: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border-color); border-left: 4px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }}
                 .scorecard p {{ font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0; }}
                 .scorecard h3 {{ font-size: 2.2rem; font-weight: 800; margin: 0; color: #ffffff; }}
 
-                /* KARTY Z LINIĄ ODDZIELAJĄCĄ */
+                /* KARTY */
                 .card {{ background-color: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 30px; border: 1px solid var(--border-color); position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.4); min-width: 0; }}
                 .card::before {{ content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); border-radius: 12px 12px 0 0; box-shadow: 0 0 15px var(--accent); }}
                 .card-title {{ margin-top: 0; color: #ffffff; font-size: 1.1rem; font-weight: 600; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }}
@@ -333,6 +338,16 @@ class ExcelReportApp:
                 .data-table tbody tr:hover {{ background-color: rgba(255,255,255,0.02); }}
                 
                 .charts-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 30px; }}
+                
+                /* STOPKA - STYLE */
+                .footer-simple {{ text-align: center; padding: 30px 0 10px 0; margin-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }}
+                
+                /* STYLE DLA ZAAWANSOWANEJ STOPKI (na przyszłość) */
+                footer {{ text-align: center; padding: 30px 0 10px 0; margin-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }}
+                footer a {{ color: var(--accent); text-decoration: none; transition: color 0.2s; }}
+                footer a:hover {{ color: #ffffff; }}
+                .github-link {{ display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 600; }}
+                .github-icon {{ width: 18px; height: 18px; fill: currentColor; }}
             </style></head><body><div class="container">
             <div class="header"><h1>Raport Analityczny</h1><div class="timestamp">Wygenerowano: {gen_time} | Plik źródłowy: <b>{file_name}</b> | Klucz agregacji: {self.id_column}</div></div>
             
@@ -346,12 +361,40 @@ class ExcelReportApp:
                 <div style="overflow-x:auto">{table_html}</div>
             </div>
             
-            <div class="charts-grid">{html_graphs}</div></div>
+            <div class="charts-grid">{html_graphs}</div>
+            
+            <!-- V2 prosta stopka -->
+            <!-- 
+            <div class="footer-simple">Stworzone przez: Mateusz Machowina</div>
+            -->
+
+            <!-- V1 rozbudowana stopka z linkami i ikoną GitHub -->
+            <footer>
+              <p style="font-size: 0.9em; color: #cfd8dc; display: flex; justify-content: center; align-items: center; gap: 6px; margin: 0; flex-wrap: nowrap;">
+                Stworzone przez: 
+                <a href="https://github.com/MateuszMachowina" target="_blank" class="github-link">
+                  <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 012.5-.34 9.5 9.5 0 012.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"/>
+                  </svg>
+                  Mateusz Machowina
+                </a>
+              </p>
+            </footer>
+            
+            </div>
             <script>window.addEventListener('load', function() {{ setTimeout(function() {{ window.dispatchEvent(new Event('resize')); }}, 150); }});</script>
             </body></html>"""
             
-            with open("raport_analityczny.html", "w", encoding="utf-8") as f: f.write(html_template)
-            webbrowser.open('file://' + os.path.realpath("raport_analityczny.html"))
+            # Pobranie folderu, w którym znajduje się plik Excel
+            output_dir = os.path.dirname(self.file_path)
+            output_file_path = os.path.join(output_dir, "raport_analityczny.html")
+            
+            # Zapis pliku obok excela
+            with open(output_file_path, "w", encoding="utf-8") as f: 
+                f.write(html_template)
+            
+            # Otwarcie pliku w przeglądarce
+            webbrowser.open('file://' + output_file_path.replace('\\', '/'))
         except Exception as e: messagebox.showerror("Błąd operacji", str(e))
 
 if __name__ == "__main__":
