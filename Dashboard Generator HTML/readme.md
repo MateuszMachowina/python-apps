@@ -1,4 +1,4 @@
-# <img src="icon.png" width="40" height="40">  HTML Dashboard Generator
+# <img src="screenshots/icon.png" width="40" height="40">  HTML Dashboard Generator
 
 A modern desktop application (GUI) for transforming raw Excel data into interactive, professional HTML reports.
 
