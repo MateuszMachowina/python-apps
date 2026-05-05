@@ -13,7 +13,7 @@ A modern desktop application (GUI) for transforming raw Excel data into interact
 ## 🚀 Quick Start
 
 ### Requirements
-Ensure you have **Python 3.14** and the necessary libraries:
+Ensure you have **Python 3.8+** and the necessary libraries:
 ```bash
 pip install pandas plotly openpyxl
 ```
