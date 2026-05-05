@@ -1,4 +1,4 @@
-# 📊 Excel Analytical Report Generator
+# 📊 HTML Dashboard Generator
 
 A modern desktop application (GUI) for transforming raw Excel data into interactive, professional HTML reports.
 
