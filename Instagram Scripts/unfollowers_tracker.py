@@ -2,7 +2,6 @@ import os, json, time, tempfile, shutil
 from pathlib import Path
 from datetime import datetime
 
-# ─── Twoje funkcje z poprzedniego skryptu ─────────────────────────────────────
 def find_firefox_profile() -> Path | None:
     appdata = os.environ.get("APPDATA", "")
     root = Path(appdata) / "Mozilla" / "Firefox" / "Profiles"
@@ -48,7 +47,7 @@ def _make_session(cookies: dict):
 def _ah() -> dict:
     return {"Accept": "*/*", "X-IG-App-ID": "936619743392459", "X-Requested-With": "XMLHttpRequest"}
 
-# ─── Nowa logika: Pobieranie i porównywanie ───────────────────────────────────
+# ─── Pobieranie i porównywanie ───────────────────────────────────
 
 STATE_FILE = Path("followers_state.json")
 
