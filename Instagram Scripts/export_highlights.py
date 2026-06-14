@@ -1,6 +1,5 @@
 """
-Highlight Exporter — generuje MP4 wyglądający jak nagranie ekranu z Instagrama.
-Wymaga: ffmpeg na PATH, Pillow
+Highlight Exporter
 """
 
 import os, sys, json, subprocess, shutil, tempfile, re, io, threading
