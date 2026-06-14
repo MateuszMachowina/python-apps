@@ -1,5 +1,5 @@
 """
-Instagram Highlights Viewer — with emoji flags + smooth transitions
+Instagram Highlights Viewer
 """
 
 import tkinter as tk
