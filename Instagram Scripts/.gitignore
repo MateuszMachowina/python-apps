@@ -12,3 +12,4 @@ flags/
 # Tymczasowe pliki i cache Pythona 
 __pycache__/
 *.pyc
+*.sqlite
