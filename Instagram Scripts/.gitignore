@@ -1,0 +1,14 @@
+# Ignoruj foldery z pobranymi i wygenerowanymi multimediami
+highlights/
+exports/
+
+# Ignoruj wygenerowane pliki ze śledzenia followersów (zawierają ID konta i nazwy)
+followers_state_*.json
+raport_*.txt
+
+# Pobrane flagi (można zignorować, skrypt sam je pobierze u innych)
+flags/
+
+# Tymczasowe pliki i cache Pythona (standardowa dobra praktyka)
+__pycache__/
+*.pyc
