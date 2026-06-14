@@ -1,3 +1,7 @@
+"""
+Instagram Unfollowers Tracker
+"""
+
 import os, json, time, tempfile, shutil
 from pathlib import Path
 from datetime import datetime
