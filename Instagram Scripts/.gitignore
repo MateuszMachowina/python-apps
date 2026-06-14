@@ -2,13 +2,13 @@
 highlights/
 exports/
 
-# Ignoruj wygenerowane pliki ze śledzenia followersów (zawierają ID konta i nazwy)
+# Ignoruj wygenerowane pliki ze śledzenia followersów
 followers_state_*.json
 raport_*.txt
 
-# Pobrane flagi (można zignorować, skrypt sam je pobierze u innych)
+# Pobrane flagi 
 flags/
 
-# Tymczasowe pliki i cache Pythona (standardowa dobra praktyka)
+# Tymczasowe pliki i cache Pythona 
 __pycache__/
 *.pyc
