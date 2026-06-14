@@ -1,4 +1,4 @@
-# 🛠️ Instagram Local Tools Suite
+# 🛠️ Instagram Local Scripts
 
 A set of four secure, locally running Python scripts for managing, downloading, and analyzing Instagram data.
 
