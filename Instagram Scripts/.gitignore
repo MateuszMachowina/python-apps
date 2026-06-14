@@ -13,3 +13,9 @@ flags/
 __pycache__/
 *.pyc
 *.sqlite
+
+# Tymczasowe pliki eksportera
+hl_*/
+*.frame.png
+*.ov.png
+*.list.txt
