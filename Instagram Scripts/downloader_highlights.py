@@ -1,6 +1,5 @@
 """
-Instagram Highlights Downloader — multi-account support
-Saves to highlights/<username>/<highlight_title>/
+Instagram Highlights Downloader
 """
 
 import tkinter as tk
