@@ -46,7 +46,7 @@ GRAD_H           = 230     # top dark gradient, for text/icon legibility
 
 # Toggles (also exposed in the GUI and as CLI flags)
 SHOW_COUNTER_DEFAULT   = True    # note: real IG highlights don't normally show this
-COUNTER_GAP_Y          = 10     # vertical gap between username and the "n/n" line below it
+COUNTER_GAP_Y          = 11     # vertical gap between username and the "n/n" line below it
 TITLE_Y_OFFSET         = 7       # nudge the whole username (+counter) block down a few px; negative = up
 SHOW_REPLY_BAR_DEFAULT = False    # bottom "Send message" bar, as seen viewing someone else's highlight
 KEEP_AUDIO_DEFAULT     = True     # keep each video clip's original audio, mixed in at the right offset
