@@ -617,9 +617,11 @@ def render_fade_frames(img_a: Image.Image, img_b: Image.Image,
     """
     frame_i = start_frame
     for f in range(FADE_F):
-        t     = f / FADE_F             # 0 → 1
+        t     = f / FADE_F             # 0 → 1 (przenikanie obrazu)
         blend = Image.blend(img_a, img_b, t)
-        overlay = build_overlay_frame(n_items, idx_b, title, thumb, t,
+        
+        # progress_frac ustawione na 0.0, aby pasek nie napełniał się w trakcie przejścia:
+        overlay = build_overlay_frame(n_items, idx_a, title, thumb, 1.0,
                                       verified, show_counter, show_reply_bar)
         comp    = _composite(blend, overlay)
         _save_frame(comp, out_dir / f"f{frame_i:06d}.jpg")
