@@ -1,21 +1,6 @@
-# Ignoruj foldery z pobranymi i wygenerowanymi multimediami
 highlights/
 exports/
-
-# Ignoruj wygenerowane pliki ze śledzenia followersów
-followers_state_*.json
-raport_*.txt
-
-# Pobrane flagi 
 flags/
-
-# Tymczasowe pliki i cache Pythona 
+unfollowers_data/
 __pycache__/
 *.pyc
-*.sqlite
-
-# Tymczasowe pliki eksportera
-hl_*/
-*.frame.png
-*.ov.png
-*.list.txt
