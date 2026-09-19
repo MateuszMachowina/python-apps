@@ -81,4 +81,5 @@ If you want to run the app without the black console window or share it easily, 
 - The initial synchronization may take a bit longer than usual. The app will automatically create a local `wot_stats.db` database and an `icons_cache` folder.
 - Designed for the EU region (`api.worldoftanks.eu`). You can adjust the `API_URL` variable in the `src/config.py` script for other regions if needed.
 
-![WoT Stats Assistant Screenshot](screenshot.png)
+![WoT Stats Assistant Screenshot](screenshot1.png)
+![WoT Stats Assistant Screenshot](screenshot2.png)
