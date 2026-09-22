@@ -1,11 +1,6 @@
 """
 Instagram Highlights → MP4 Exporter
 ====================================
-Renders each highlight folder into a 1080×1920 MP4 with a story-viewer overlay
-modeled directly off the real Instagram app (progress bars, avatar, username,
-verified badge, "•••" / close icons, and the "Send message" reply bar) plus
-crossfade transitions between clips.
-
 Requirements:
     pip install pillow
     ffmpeg must be on PATH
@@ -48,7 +43,7 @@ BAR_PAD_X        = 12
 BAR_RADIUS       = 1
 
 # Avatar + username row
-AVATAR_R         = 34     # 68px diameter — IG's on-screen avatar is ~6-7% of width
+AVATAR_R         = 36     # ~5% larger than original 34, 72px diameter
 AVATAR_GAP_BELOW = 14      # gap between the bar row and the avatar
 AVATAR_Y         = BAR_Y + BAR_H + AVATAR_GAP_BELOW + AVATAR_R
 AVATAR_CX        = BAR_PAD_X + AVATAR_R
@@ -356,8 +351,9 @@ def _draw_avatar(overlay: Image.Image, thumb: Image.Image | None, cx: int, cy: i
     circle.paste(img, mask=mask)
     overlay.paste(circle, (cx - r, cy - r), circle)
 
-    ImageDraw.Draw(overlay).ellipse([cx - r, cy - r, cx + r, cy + r],
-                                     outline=(*CIRC_COL, 245), width=3)
+    # Obwódka usunięta
+    # ImageDraw.Draw(overlay).ellipse([cx - r, cy - r, cx + r, cy + r],
+    #                                  outline=(*CIRC_COL, 245), width=3)
 
 def _draw_verified_badge(d, cx, cy, r=11):
     d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(51, 153, 255, 255))
